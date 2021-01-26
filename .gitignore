@@ -1,3 +1,6 @@
 TEST
 __pycache__
 .vscode
+build
+dist
+dir-organiser.spec
