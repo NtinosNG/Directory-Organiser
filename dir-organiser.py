@@ -3,9 +3,17 @@ import json
 import filemanager # Custom library that contains necessary functions
 
 # Loads the extensions list from the JSON file
-f = open('AllFileTypes.json')
-extensionsList = json.load(f)
-f.close()
+extensionsListPath = os.getcwd() + '\AllFileTypes.json'
+f = None
+extensionsList = None
+
+try:
+	f = open(extensionsListPath)
+	extensionsList = json.load(f)
+	f.close()
+except Exception as e:
+	print("\nSomething went wrong when opening the file: \n", e)
+	exit()
 
 # Name of the main folder where all files will be organised in
 mainfolder = "STUFF"
